@@ -77,7 +77,7 @@ const invoices = [
     customer_id: customers[5].id,
     amount: 34577,
     status: 'pending',
-    date: '2023-08-05',
+    date: '2023-12-12',
   },
   {
     customer_id: customers[2].id,
@@ -133,7 +133,7 @@ const revenue = [
   { month: 'Jan', revenue: 2000 },
   { month: 'Feb', revenue: 1800 },
   { month: 'Mar', revenue: 2200 },
-  { month: 'Apr', revenue: 2500 },
+  { month: 'Apr', revenue: 6000 },
   { month: 'May', revenue: 2300 },
   { month: 'Jun', revenue: 3200 },
   { month: 'Jul', revenue: 3500 },
