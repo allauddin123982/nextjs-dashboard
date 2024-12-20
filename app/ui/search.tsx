@@ -5,13 +5,14 @@ import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { useDebouncedCallback } from 'use-debounce';
 
 export default function Search({ placeholder }: { placeholder: string }) {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
+  const searchParams = useSearchParams(); //Client Component hook that lets you read the current URL's query string.
+  const pathname = usePathname(); 
   const { replace } = useRouter();
 
   //updating the URL
   const handleChange = useDebouncedCallback((term: string) => {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(searchParams); // URLSearchParams interface defines utility methods to work with the query string of a URL.
+    params.set('page', '1');
     if (term) {
       params.set("query", term);
     } else {
