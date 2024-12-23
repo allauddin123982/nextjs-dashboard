@@ -10,6 +10,7 @@ import {
 import { formatCurrency } from "./utils";
 
 export async function fetchRevenue() {
+  console.log("fetchRevenue")
   try {
     // We artificially delay a response for demo purposes.
     // Don't do this in production :)
@@ -29,6 +30,7 @@ export async function fetchRevenue() {
 
 
 export async function fetchLatestInvoices() {
+  console.log("fetchLatestInvoices")
   try {
     const data = await sql<LatestInvoiceRaw>`
       SELECT invoices.amount, customers.name, customers.image_url, customers.email, invoices.id
@@ -49,6 +51,7 @@ export async function fetchLatestInvoices() {
 }
 
 export async function fetchCardData() { 
+  console.log("fetchCardData")
   try {
     // You can probably combine these into a single SQL query
     // However, we are intentionally splitting them to demonstrate
@@ -89,7 +92,7 @@ export async function fetchFilteredInvoices(
   currentPage: number
 ) {
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
-
+ console.log("fetchFilteredInvoices")
   try {
     const invoices = await sql<InvoicesTable>`
       SELECT
@@ -120,6 +123,7 @@ export async function fetchFilteredInvoices(
 }
 
 export async function fetchInvoicesPages(query: string) {
+  console.log("fetchInvoicesPages")
   try {
     const count = await sql`SELECT COUNT(*)
     FROM invoices
@@ -141,6 +145,7 @@ export async function fetchInvoicesPages(query: string) {
 }
 
 export async function fetchInvoiceById(id: string) {
+  console.log("fetchInvoiceById")
   try {
     const data = await sql<InvoiceForm>`
       SELECT
@@ -166,6 +171,7 @@ export async function fetchInvoiceById(id: string) {
 }
 
 export async function fetchCustomers() {
+  console.log("fetchCustomers")
   try {
     const data = await sql<CustomerField>`
       SELECT
@@ -184,6 +190,7 @@ export async function fetchCustomers() {
 }
 
 export async function fetchFilteredCustomers(query: string) {
+  console.log("fetchFilteredCustomers")
   try {
     const data = await sql<CustomersTableType>`
 		SELECT
