@@ -1,3 +1,5 @@
+"use client";
+import { useActionState } from "react";
 import { CustomerField } from "@/app/lib/definitions";
 import { createInvoice, State } from "@/app/lib/action";
 
@@ -9,7 +11,6 @@ import {
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
 import { Button } from "@/app/ui/button";
-import { useActionState } from "react";
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
   const initialState: State = { message: null, errors: {} };
@@ -34,9 +35,9 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
               <option value="" disabled>
                 Select a customer
               </option>
-              {customers.map((customer) => (
-                <option key={customer.id} value={customer.id}>
-                  {customer.name}
+              {customers.map((name) => (
+                <option key={name.id} value={name.id}>
+                  {name.name}
                 </option>
               ))}
             </select>
