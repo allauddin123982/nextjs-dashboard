@@ -16,7 +16,7 @@
     "clsx": "^2.1.1",
     "env": "^0.0.2",
     "next": "15.1.1-canary.13",
-    "next-auth": "5.0.0-beta.19",
+    "next-auth": "5.0.0-beta.25",
     "postcss": "8.4.49",
     "pull": "^2.1.1",
     "react": "19.0.0",
